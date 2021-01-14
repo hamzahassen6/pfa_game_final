@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
     public Transform rightcap;
     public Transform leftcap;
     public GameObject[] enemy;
-    
+    public GameObject dethUI;
 
     public static float NumRestEnemy;
 
@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
     {/******************1 st intantiate ******************************/
 
         instantiateGO();
-
-
+        dethUI.SetActive(false);
+        NumRestEnemy = 3f;
 
     }
 
@@ -69,10 +69,11 @@ public class GameManager : MonoBehaviour
     public void instantiateGO()
     {
         float RandomX, RandomZ;
-        int RandomE = Random.Range(0,2);
+
 
         for (int i = 0; i < 3; i++)
         {
+            int RandomE = Random.Range(0, 2);
             RandomX = Random.Range(-18, 18);
             RandomZ = Random.Range(-10f, 10f);
             Vector3 randompos = new Vector3(RandomX, 1.2f, RandomZ);

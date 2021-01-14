@@ -6,6 +6,7 @@ public class destroy_player : MonoBehaviour
 {
    
     public GameObject player;
+    public GameObject deathUI;
     // Start is called before the first frame update
 
 
@@ -15,8 +16,11 @@ public class destroy_player : MonoBehaviour
         {
             if (collision.collider.tag == ("enemy2") || collision.collider.tag == ("enemy"))
             {
-                Destroy(player);
-                 player = null;
+                deathUI.SetActive(true);
+
+                Time.timeScale = 1f;
+                 
+                
             }
         }
      

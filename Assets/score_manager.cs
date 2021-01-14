@@ -6,13 +6,16 @@ using TMPro;
 
 public class score_manager : MonoBehaviour
 {
-    public static int Score = 0;
+    public static int Score ;
     public Text txtscore;
+    void Start()
+    {
+        Score = 0;
+    }
    
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Score);
         txtscore.text ="Score : "+Score.ToString();
         
     }
