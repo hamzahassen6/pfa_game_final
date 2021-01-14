@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
         instantiateGO();
         dethUI.SetActive(false);
         NumRestEnemy = 3f;
+        Time.timeScale = 1;
 
     }
 
