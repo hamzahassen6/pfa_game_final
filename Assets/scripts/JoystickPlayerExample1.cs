@@ -35,8 +35,8 @@ public class JoystickPlayerExample1 : MonoBehaviour
             if (dist >= maxdis)
 
             {
-                offset = right.transform.position - left.transform.position;
-                right.transform.position = left.transform.position + Vector3.ClampMagnitude(offset, maxdis);
+                offset = left.transform.position - right.transform.position;
+                left.transform.position = right.transform.position + Vector3.ClampMagnitude(offset, maxdis);
             }
 
         } 
@@ -63,21 +63,21 @@ public class JoystickPlayerExample1 : MonoBehaviour
         }
 
 
-        if (direction_left == Vector3.zero)
-        {
-            //rb.AddForce(offset * magnetforce * Time.deltaTime);
-            left.transform.position = Vector3.MoveTowards(left.transform.position, right.transform.position, speedmovetowards);
-            rb_left.velocity = Vector3.zero;
+        //if (direction_left == Vector3.zero)
+        //{
+        //    //rb.AddForce(offset * magnetforce * Time.deltaTime);
+        //    left.transform.position = Vector3.MoveTowards(left.transform.position, right.transform.position, speedmovetowards);
+        //    rb_left.velocity = Vector3.zero;
 
-        }
+        //}
 
-        if (direction_right == Vector3.zero)
-        {
-            //rb.AddForce(offset * magnetforce * Time.deltaTime);
-            right.transform.position = Vector3.MoveTowards(right.transform.position, left.transform.position, speedmovetowards);
-            rb_right.velocity = Vector3.zero;
+        //if (direction_right == Vector3.zero)
+        //{
+        //    //rb.AddForce(offset * magnetforce * Time.deltaTime);
+        //    right.transform.position = Vector3.MoveTowards(right.transform.position, left.transform.position, speedmovetowards);
+        //    rb_right.velocity = Vector3.zero;
 
-        }
+        //}
 
     }
 }
